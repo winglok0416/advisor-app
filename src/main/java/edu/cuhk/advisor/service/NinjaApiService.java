@@ -3,17 +3,17 @@ package edu.cuhk.advisor.service;
 import edu.cuhk.advisor.dto.ninja.Info;
 import edu.cuhk.advisor.dto.ninja.Nutrition;
 import edu.cuhk.advisor.dto.ninja.Recipe;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class NinjaApiService {
 
@@ -28,7 +28,9 @@ public class NinjaApiService {
                 .build();
     }
 
+    @Cacheable(cacheNames = "nutrition-list")
     public Flux<Nutrition> getNutritionList(String queryParams) {
+        log.info("Getting nutrition list...");
         return webClient()
                 .get()
                 .uri(uriBuilder -> uriBuilder
@@ -42,6 +44,7 @@ public class NinjaApiService {
     }
 
     public Flux<Recipe> getRecipeList(String queryParams, Optional<String> offset) {
+        log.info("Getting recipe list...");
         return webClient()
                 .get()
                 .uri(uriBuilder -> uriBuilder

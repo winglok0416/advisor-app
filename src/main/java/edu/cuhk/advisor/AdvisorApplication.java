@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.data.r2dbc.R2dbcDataAutoConfigurat
 import org.springframework.boot.autoconfigure.data.r2dbc.R2dbcRepositoriesAutoConfiguration;
 import org.springframework.boot.autoconfigure.r2dbc.R2dbcAutoConfiguration;
 import org.springframework.boot.autoconfigure.r2dbc.R2dbcTransactionManagerAutoConfiguration;
+import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication(exclude = {
 		R2dbcAutoConfiguration.class,
@@ -13,6 +14,7 @@ import org.springframework.boot.autoconfigure.r2dbc.R2dbcTransactionManagerAutoC
 		R2dbcRepositoriesAutoConfiguration.class,
 		R2dbcTransactionManagerAutoConfiguration.class
 })
+@EnableCaching
 public class AdvisorApplication {
 
 	public static void main(String[] args) {

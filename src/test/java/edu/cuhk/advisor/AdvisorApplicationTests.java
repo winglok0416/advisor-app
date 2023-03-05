@@ -7,6 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 		"ninja.api-key=test",
 		"spring.security.user.name=advisor",
 		"spring.security.user.password=1234",
+		"edamam.app-id=123123123",
+		"edamam.app-key=testpassword"
 })
 class AdvisorApplicationTests {
 
