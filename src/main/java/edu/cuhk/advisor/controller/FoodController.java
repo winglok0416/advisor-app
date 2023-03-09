@@ -4,7 +4,6 @@ import edu.cuhk.advisor.dto.Info;
 import edu.cuhk.advisor.dto.ninja.Nutrition;
 import edu.cuhk.advisor.dto.spoonacular.AnalyzedResult;
 import edu.cuhk.advisor.dto.spoonacular.Recipe;
-import edu.cuhk.advisor.service.EdamamApiService;
 import edu.cuhk.advisor.service.NinjaApiService;
 import edu.cuhk.advisor.service.SpoonacularApiService;
 import org.springframework.web.bind.annotation.*;
@@ -19,13 +18,10 @@ public class FoodController {
 
     private final NinjaApiService ninjaApiService;
 
-    private final EdamamApiService edamamApiService;
-
     private final SpoonacularApiService spoonacularApiService;
 
-    public FoodController(NinjaApiService ninjaApiService, EdamamApiService edamamApiService, SpoonacularApiService spoonacularApiService) {
+    public FoodController(NinjaApiService ninjaApiService, SpoonacularApiService spoonacularApiService) {
         this.ninjaApiService = ninjaApiService;
-        this.edamamApiService = edamamApiService;
         this.spoonacularApiService = spoonacularApiService;
     }
 
