@@ -14,11 +14,10 @@ Run ``gradle build``
 
 ~~~
 java \
--Dninja.api-key=axm28RlQA+lj1nAtf7Q6hg==J1K1HMnOBplpdfz3 \
+-Dninja.api-key={Your NINJA API KEY} \
 -Dspring.security.user.name=advisor \
--Dspring.security.user.password=f7cd82c8-ac20-4380-8977-07bdb0f291cf \
--Dedamam.app-id=b2771b14 -Dedamam.app-key=cc745cfd1b7364aeaed05d726a012ff4 \
--Dspoonacular.api-key=ee1e32845d554092af39d65cecb22b54 \
+-Dspring.security.user.password={Your custom auth password} \
+-Dspoonacular.api-key={Your SPOONACULAR API KEY} \
 -jar ./build/libs/advisor-app-0.0.1-SNAPSHOT.jar
 ~~~
 
@@ -38,8 +37,6 @@ docker run \
 -e NINJA_API_KEY={Your NINJA API KEY} \
 -e AUTH_USER_NAME="advisor" \
 -e AUTH_USER_PASSWORD={Your custom auth password} \
--e EDAMAM_APP_ID={Your EDAMAM APP ID} \
--e EDAMAM_APP_KEY={Your EDAMAM APP KEY} \
 -e SPOONACULAR_API_KEY={Your SPOONACULAR API KEY} \
 -p 80:8080 -d --name advisor-app --restart always winglok0416/advisor-app:{version}
 ~~~
