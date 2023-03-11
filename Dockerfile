@@ -15,7 +15,7 @@ RUN gradle clean build
 
 # Stage: run
 FROM azul/zulu-openjdk-alpine:17.0.6-17.40.19-jre
-ENV ARTIFACT_NAME=advisor-app-0.0.1-SNAPSHOT.jar
+ENV ARTIFACT_NAME=food-app-backend-0.0.1-SNAPSHOT.jar
 ENV APP_HOME=/usr/app
 
 WORKDIR $APP_HOME

@@ -1,4 +1,4 @@
-# Advisor app
+# Food app backend
 
 ### Language: Java (version 17.0.6)
 ### Framework: Spring boot (version 3.0.2)
@@ -18,7 +18,7 @@ java \
 -Dspring.security.user.name=advisor \
 -Dspring.security.user.password={Your custom auth password} \
 -Dspoonacular.api-key={Your SPOONACULAR API KEY} \
--jar ./build/libs/advisor-app-0.0.1-SNAPSHOT.jar
+-jar ./build/libs/food-app-backend-0.0.1-SNAPSHOT.jar
 ~~~
 
 ---
@@ -26,10 +26,10 @@ java \
 ## Run with Docker
 
 ### Build Docker Image
-``docker build . -t winglok0416/advisor-app:{version}``
+``docker build . -t winglok0416/food-app-backend:{version}``
 
 ### Push Docker Image
-``docker push winglok0416/advisor-app:{version}``
+``docker push winglok0416/food-app-backend:{version}``
 
 ### Create and Run Docker Container
 ~~~
@@ -38,5 +38,5 @@ docker run \
 -e AUTH_USER_NAME="advisor" \
 -e AUTH_USER_PASSWORD={Your custom auth password} \
 -e SPOONACULAR_API_KEY={Your SPOONACULAR API KEY} \
--p 80:8080 -d --name advisor-app --restart always winglok0416/advisor-app:{version}
+-p 80:8080 -d --name food-app-backend --restart always winglok0416/food-app-backend:{version}
 ~~~
